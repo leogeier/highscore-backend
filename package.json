@@ -4,11 +4,13 @@
   "description": "A simple backend for storing and retrieving highscore leaderboards for quick projects.",
   "main": "src/app.js",
   "scripts": {
+    "start": "node src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Leonard Geier",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "sqlite3": "^5.0.0"
   }
 }
