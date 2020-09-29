@@ -1,7 +1,8 @@
 {
   "port": 3000,
   "db_path": "db.sqlite3",
+  "log_path": "access.log",
   "secret": "change_me",
   "max_count": 20,
-  "log_path": "server.log"
+  "max_name_length": 100
 }
