@@ -12,6 +12,7 @@ router.route("/highscore")
     const count = parseInt(req.query.count, 10);
     if (Number.isNaN(count)) {
       res.sendStatus(400);
+      return;
     }
 
     const scores = await db.get_highscores(Math.min(count, config.max_count));
@@ -35,6 +36,17 @@ router.route("/highscore")
     const id = await db.add_score(name, score, time);
     res.status(201).send({id});
   });
+
+router.get("/rank", async (req, res) => {
+  const id = parseInt(req.query.id, 10);
+  if (Number.isNaN(id)) {
+    res.sendStatus(400);
+    return;
+  }
+
+  const rank = await db.get_rank(id);
+  res.send({rank});
+});
 
 module.exports = router;
 
