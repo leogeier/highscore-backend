@@ -36,3 +36,8 @@ test("gets the current rank of a given row on the leaderboard", async () => {
   const row_id = await db.add_score("zac", 50, 0);
   expect(await db.get_rank(row_id)).toEqual(4);
 });
+
+test("returns the rank -1 if an invalid row id was given", async () => {
+  expect(await db.get_rank(10000)).toEqual(-1);
+  expect(await db.get_rank(-1)).toEqual(-1);
+})
