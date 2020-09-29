@@ -1,5 +1,7 @@
 {
   "port": 3000,
   "db_path": "db.sqlite3",
-  "secret": "change_me"
+  "secret": "change_me",
+  "max_count": 20,
+  "log_path": "server.log"
 }
