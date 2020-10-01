@@ -36,8 +36,8 @@ class DB {
     });
   }
 
-  async add_score(name, score, time) {
-    return await new Promise((resolve, reject) => {
+  add_score(name, score, time) {
+    return new Promise((resolve, reject) => {
       this.insert_row.run(name, score, time, function(err) {
         if (err != null) reject(err);
         resolve(this.lastID);
@@ -45,8 +45,8 @@ class DB {
     });
   }
 
-  async get_highscores(count) {
-    return await new Promise((resolve, reject) => {
+  get_highscores(count) {
+    return new Promise((resolve, reject) => {
       this.select_highscores.all(count, (err, rows) => {
         if (err != null) reject(err);
         resolve(rows);
@@ -54,8 +54,8 @@ class DB {
     });
   }
 
-  async get_rank(row_id) {
-    return await new Promise((resolve, reject) => {
+  get_rank(row_id) {
+    return new Promise((resolve, reject) => {
       this.select_row_rank.get(row_id, (err, result) => {
         if (err != null) reject(err);
         resolve(result == null ? -1 : result.rank);
