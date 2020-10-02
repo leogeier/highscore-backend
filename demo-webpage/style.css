@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Overpass&display=swap');
+
+
+html {
+  background: #28103B;
+}
+
+#leaderboard {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+
+  font-size: 20px;
+}
+
+table {
+  border-collapse: collapse;
+  border-radius: 15px;
+}
+
+#leaderboard-body {
+  font-family: 'Overpass', sans-serif;
+}
+
+#leaderboard-head {
+  font-family: 'Bungee', sans-serif;
+  display: none;
+}
+
+td, th {
+  padding: 5px 40px 5px;
+}
+
+tr:nth-child(odd) {
+  background: #763E8A;
+}
+
+tr:nth-child(even) {
+  background: #28103B;
+  color: #763E8A;
+}
